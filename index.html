@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matrix Finance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="marca">
+            <h1>MATRIX FINANCE</h1>
+            <p>SISTEMA DE CONTROLE FINANCEIRO</p>
+        </div>
+
+        <span class="status">● ONLINE</span>
+    </header>
+
+    <main>
+
+        
+        <section class="painel-financeiro">
+
+            <div class="cartao saldo">
+                <p>Saldo atual</p>
+                <h2 id = "valorSaldo">R$ 0,00</h2>
+            </div>
+
+            <div class="cartao receitas">
+                <p>Receitas</p>
+                <h2 id = "valorReceitas">R$ 0,00</h2>
+            </div>
+
+            <div class="cartao despesas">
+                <p>Despesas</p>
+                <h2 id = "valorDespesas">R$ 0,00</h2>
+            </div>
+
+        </section>
+
+         
+        
+<section class="relatorio">
+    <h2>RELATÓRIO FINANCEIRO</h2>
+
+    
+<div class="filtro-periodo">
+    <label for="filtroPeriodo">PERÍODO DO RELATÓRIO</label>
+    <select id="filtroPeriodo">
+        <option value="todos">Todo o período</option>
+        <option value="hoje">Hoje</option>
+        <option value="mes">Este mês</option>
+        <option value="ano">Este ano</option>
+    </select>
+</div>
+
+
+    <div class="graficos">
+        <div class="grafico-card">
+            <h3>Receitas x Despesas</h3>
+            <canvas id="graficoComparativo"></canvas>
+        </div>
+
+        <div class="grafico-card">
+            <h3>Distribuição financeira</h3>
+            <canvas id="graficoDistribuicao"></canvas>
+        </div>
+    </div>
+</section>
+
+
+        <section class="formulario">
+
+            <h2>Nova movimentação</h2>
+
+            <label for="descricao">Descrição</label>
+            <input
+                type="text"
+                id="descricao"
+                placeholder="Ex.: Salário, lanche..."
+            >
+
+            <label for="valor">Valor (R$)</label>
+            <input
+                type="number"
+                id="valor"
+                placeholder="0,00"
+                step="0.01"
+                min="0.01"
+            >
+
+            <label for="tipo">Tipo de movimentação</label>
+            <select id="tipo">
+                <option value="receita">Receita</option>
+                <option value="despesa">Despesa</option>
+            </select>
+
+            <button id="adicionar">
+                Adicionar movimentação
+            </button>
+
+        </section>
+
+       
+        <section class="movimentacoes">
+            <h2>Movimentações financeiras</h2>
+              <ul id="listaMovimentacoes"></ul>
+</section>
+
+    </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+       <script src="script.js"></script>
+</body>
+</html>
